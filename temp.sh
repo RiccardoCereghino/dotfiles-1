@@ -2,7 +2,7 @@
 # Installs
 
 # basics
-apt install curl cmake
+apt install curl cmake git i3 vim
 
 # fonts
 apt install fonts-powerline
@@ -17,7 +17,12 @@ apt install kitty
 apt install feh
 
 # polybar
-apt install libxcb-composite0 libxcb-composite0-dev
+apt install libxcb-composite0 libxcb-composite0-dev libdssialsacompat-dev
+apt install libsdl2-dev libcurl4-openssl-dev
+apt install libiw-dev
+apt install libxcb-*
+apt install python-xcbgen
+apt install xcb-proto
 
 # i3-gaps libraries
 mkdir tmp
@@ -46,11 +51,10 @@ make install
 
 cd ~
 
-mkdir 
 curl https://cdn.discordapp.com/attachments/312588502917316619/577412922456801297/7ee4755.jpg --create-dirs -o $HOME/.walls/wall.png
 
 # polybar
 cd tmp
 git clone https://github.com/polybar/polybar.git
 cd polybar
-build.sh < yes
+yes | ./build.sh
